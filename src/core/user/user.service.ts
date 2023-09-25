@@ -77,7 +77,7 @@ export class UserService {
     return;
   }
 
-  async getUsers(data: any) {
+  async getUsers(data: { search?: string; limit?: number; offset?: number }) {
     const { search, limit = 10, offset = 0 } = data;
 
     let where;

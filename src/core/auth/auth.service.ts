@@ -13,7 +13,13 @@ export class AuthService {
     private userService: UserService,
   ) {}
 
-  async signUp(body: any) {
+  async signUp(body: {
+    firstName?: string;
+    lastName?: string;
+    email?: string;
+    phone?: string;
+    password: string;
+  }) {
     const { password, ...data } = body;
 
     const encryptedPassword = await bcrypt.hash(password, 10);
