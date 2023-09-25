@@ -47,7 +47,7 @@ export class UserController {
   }
 
   @Get('/getAll')
-  async getUsers(@Req() req: AuthRequest, @Query() query: GetUsersDto) {
+  async getUsers(@Query() query: GetUsersDto) {
     return this.userService.getUsers(query);
   }
 }

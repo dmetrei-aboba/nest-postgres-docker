@@ -85,8 +85,8 @@ export class UserService {
     if (search)
       where = {
         [Op.or]: {
-          email: { [Op.iLike]: search },
-          phone: { [Op.iLike]: search },
+          email: { [Op.iLike]: `%${search}%` },
+          phone: { [Op.iLike]: `%${search}%` },
         },
       };
 
